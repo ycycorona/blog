@@ -5,8 +5,13 @@ let log = require('../utils/log')
 mongoose.Promise = require('bluebird')
 
 let mongoUrl = `${config.mongoHost}:${config.mongoPort}/${config.mongoDatabase}`
+let mongoOpt = {
+  user: config.mongoUser,
+  pass: config.mongoPassword
+}
 
-mongoose.connect(mongoUrl)
+
+mongoose.connect(mongoUrl, mongoOpt)
 
 let db = mongoose.connection
 

@@ -6,8 +6,12 @@ const log = require('log4js').getLogger('ssr axios')
 mongoose.Promise = global.Promise = require('bluebird')
 
 const mongoUrl = `${config.mongoHost}:${config.mongoPort}/${config.mongoDatabase}`
+const mongoOpt = {
+  user: config.mongoUser,
+  pass: config.mongoPassword
+}
 
-mongoose.connect(mongoUrl)
+mongoose.connect(mongoUrl, mongoOpt)
 
 const db = mongoose.connection
 

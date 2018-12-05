@@ -20,6 +20,9 @@ import {
   Archive
 } from 'create-route'
 
+import * as p from 'create-route'
+console.log(JSON.stringify(p))
+
 export default function createRouter() {
   return new VueRouter({
     mode: 'history',
